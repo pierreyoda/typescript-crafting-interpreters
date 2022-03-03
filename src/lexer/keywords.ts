@@ -18,7 +18,7 @@ export const keywords = [
   "var",
   "while",
 ] as const;
-type Keyword = typeof keywords[number];
+export type Keyword = typeof keywords[number];
 
 /**
  * Linking hash between source-code identifier and internal token type.

@@ -1,7 +1,8 @@
 import { Token } from "./token";
+import { LoxLiteral } from "../literal";
 import { TokenType } from "./token-types";
 import { ReportErrorFunction } from "../errors";
-import { tokenTypesPerKeyword } from "./keywords";
+import { Keyword, tokenTypesPerKeyword } from "./keywords";
 
 export class Lexer {
   private tokens: Token[] = [];
@@ -108,7 +109,7 @@ export class Lexer {
     }
 
     const text = this.source.substring(this.start, this.current);
-    const type: TokenType | undefined = tokenTypesPerKeyword[text];
+    const type: TokenType | undefined = tokenTypesPerKeyword[text as Keyword];
     this.addToken(type ? type : "IDENTIFIER");
   }
 
@@ -131,9 +132,9 @@ export class Lexer {
         Number(this.source.substring(this.start, this.current)));
   }
 
-  private addToken(type: TokenType, literal?: unknown): void {
+  private addToken(type: TokenType, literal?: LoxLiteral): void {
     const text = this.source.substring(this.start, this.current);
-    this.tokens.push(new Token(type, text, literal, this.line));
+    this.tokens.push(new Token(type, text, literal ?? null, this.line));
   }
 
   /** Consumes the next character in the source file and returns it. */
