@@ -5,7 +5,7 @@ import { Token } from "../lexer/token";
  * @example false
  * @example 2
  */
-export type LiteralExpression {
+export type LiteralExpression = {
   type: "literal";
   literal: LoxLiteral;
 }
