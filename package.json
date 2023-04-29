@@ -1,7 +1,7 @@
 {
   "name": "typescript-crafting-interpreters",
   "version": "0.0.1",
-  "description": "Rust implementation of the Crafting Interpreters book.",
+  "description": "A Rust implementation of the Crafting Interpreters book.",
   "main": "src/main.ts",
   "repository": "https://github.com/pierreyoda/typescript-crafting-interpreters",
   "author": "pierreyoda <pierreyoda@users.noreply.github.com>",
@@ -11,11 +11,11 @@
     "main": "ts-node ./src/main.ts"
   },
   "devDependencies": {
-    "@types/node": "17.0.23",
-    "ts-node": "10.7.0",
-    "typescript": "4.6.3"
+    "@types/node": "18.16.3",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
   },
   "dependencies": {
-    "chalk": "4.1.2"
+    "chalk": "5.2.0"
   }
 }
